@@ -1,0 +1,194 @@
+<style>
+    /* Container for horizontal cards */
+    .card-container {
+        display: flex;
+        flex-wrap: nowrap; /* Keeps all cards in one row */
+        overflow-x: auto; /* Enables horizontal scrolling */
+        gap: 20px;
+        padding: 20px;
+        white-space: nowrap; /* Ensures cards stay in a single line */
+      }
+      
+      .card-container::-webkit-scrollbar {
+        display: none; /* Hides scrollbar in WebKit browsers */
+      }
+      
+      .card {
+        flex: 0 0 auto; /* Prevents shrinking and maintains size */
+        width: 300px; /* Ensures a consistent card width */
+      }
+      
+    /* Card Container */
+    .card {
+      width: 300px;
+      display: inline-block;
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      font-family: 'Arial', sans-serif;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+  
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+  
+    /* Card Header */
+    .card-header {
+      background: #147de0;
+      color: #ffffff;
+      padding: 16px;
+      text-align: center;
+      border-radius: 20px;
+    }
+  
+    .event-name {
+      margin: 0;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+  
+    .event-type {
+      display: inline-block;
+      margin-top: 8px;
+      padding: 4px 8px;
+      border-radius: 12px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      background: rgba(255, 255, 255, 0.2);
+    }
+  
+    /* Event Type Colors */
+    .event-type.technical {
+      background: #ffffff;
+      color: #000000;
+    }
+  
+    .event-type.paper {
+      background: #ffc107;
+    }
+  
+    .event-type.non-technical {
+      background: #dc3545;
+    }
+  
+    /* Card Body */
+    .card-body {
+      padding: 16px;
+    }
+  
+    .event-detail {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 12px;
+      font-size: 0.95rem;
+      color: #555;
+    }
+  
+    .label {
+      font-weight: 600;
+      color: #333;
+    }
+  
+    .value {
+      color: #000000;
+    }
+  
+    /* Card Footer */
+    .card-footer {
+      padding: 16px;
+      background: #f8f9fa;
+      text-align: center;
+    }
+  
+    .register-button {
+      background: #00be56;
+      color: #ffffff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+  
+    .register-button:hover {
+      background: #0056b3;
+    }
+  </style>
+
+  <div class="card-container">
+    <div class="card">
+      <div class="card-header">
+        <h2 class="event-name">Event Name</h2>
+        <span class="event-type technical">Technical</span>
+      </div>
+      <div class="card-body">
+        <div class="event-detail">
+          <span class="label">Registered Students:</span>
+          <span class="value">150</span>
+        </div>
+        <div class="event-detail">
+          <span class="label">Level:</span>
+          <span class="value">Intermediate</span>
+        </div>
+        <div class="event-detail">
+          <span class="label">Date:</span>
+          <span class="value">October 25, 2023</span>
+        </div>
+      </div>
+      <div class="card-footer">
+        <button class="register-button">Register Now</button>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <h2 class="event-name">Event Name</h2>
+        <span class="event-type technical">Technical</span>
+      </div>
+      <div class="card-body">
+        <div class="event-detail">
+          <span class="label">Registered Students:</span>
+          <span class="value">150</span>
+        </div>
+        <div class="event-detail">
+          <span class="label">Level:</span>
+          <span class="value">Intermediate</span>
+        </div>
+        <div class="event-detail">
+          <span class="label">Date:</span>
+          <span class="value">October 25, 2023</span>
+        </div>
+      </div>
+      <div class="card-footer">
+        <button class="register-button">Register Now</button>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <h2 class="event-name">Event Name</h2>
+        <span class="event-type technical">Technical</span>
+      </div>
+      <div class="card-body">
+        <div class="event-detail">
+          <span class="label">Registered Students:</span>
+          <span class="value">150</span>
+        </div>
+        <div class="event-detail">
+          <span class="label">Level:</span>
+          <span class="value">Intermediate</span>
+        </div>
+        <div class="event-detail">
+          <span class="label">Date:</span>
+          <span class="value">October 25, 2023</span>
+        </div>
+      </div>
+      <div class="card-footer">
+        <button class="register-button">Register Now</button>
+      </div>
+    </div>
+
+
+  </div>

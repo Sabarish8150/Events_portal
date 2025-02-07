@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page_title }}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'dashboard/styles.css' %}">
+</head>
+<body>
+
+    <!-- Menu Toggle Button (For Mobile) -->
+    <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+
+    <!-- Sidebar -->
+    {% include 'html/navbar.html' %}
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <h1>Dashboard</h1>
+        <hr>
+        <div class="dashboard-grid">
+            <!-- First Section: Horizontal Scroll -->
+            <div class="horizontal-scroll">
+                <h2>Registered Events:</h2>
+                
+                {% include 'html/r_events.html' %}
+            </div>
+    
+            <!-- Second Section: Vertical Scroll -->
+            <div class="vertical-scroll">
+                <h2>Event Requisition:</h2>
+                {% include 'html/ongoing_events.html' %}
+            </div>
+        </div>
+    </div>
+    
+
+
+    <script src="{% static 'dashboard/js/script.js' %}"></script>
+
+</body>
+</html>

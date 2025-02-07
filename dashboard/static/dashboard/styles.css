@@ -1,0 +1,185 @@
+/* Sidebar Styles */
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background-color: #1a1a2e;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 20px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.3s ease-in-out;
+}
+
+.sidebar img {
+    display: block;
+    margin: 0 auto;
+    border-radius: 50%;
+    width: 80px;
+}
+
+.sidebar h2 {
+    text-align: center;
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.nav-links a {
+    display: block;
+    padding: 12px;
+    margin: 8px 0;
+    text-decoration: none;
+    background-color: #2e3b4e;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    background-color: #147de0;
+    transform: scale(1.05);
+}
+
+.logout a {
+    display: block;
+    text-align: center;
+    padding: 10px;
+    background-color: #e63946;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.logout a:hover {
+    background-color: #b71c1c;
+}
+
+/* Main Content */
+.main-content {
+    margin-left: 260px;
+    padding: 10px;
+    text-align: center;
+    transition: margin-left 0.3s ease-in-out;
+}
+
+.main-content h1 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #1a1a2e;
+    margin-top: 0px;
+}
+
+.main-content hr {
+    margin: 5px auto;
+    border: none;
+    height: 2px;
+    width: 80%;
+    background-color: #c5dcf7;
+}
+/* Dashboard Container */
+.dashboard-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Cards */
+.card {
+    background-color: #344054;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+/* Full Width for All Events */
+.full-width {
+    grid-column: span 2;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+th {
+    background-color: #147de0;
+    color: white;
+}
+
+/* Status Styling */
+.status {
+    color: green;
+    font-weight: bold;
+}
+
+.status.ongoing {
+    color: orange;
+}
+/* Grid container for the dashboard */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 3fr 1fr; /* First section takes more space */
+    /* gap: 20px; */
+    height: 100%;
+    padding: 10px;
+}
+.horizontal-scroll h2{
+    text-align: left;
+}
+/* Horizontal scrolling section */
+.horizontal-scroll {
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 10px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */
+}
+
+/* Vertical scrolling section */
+.vertical-scroll {
+    overflow-y: auto;
+    max-height: 435px; /* Adjust height as needed */
+    padding: 10px;
+    /* background: #f8f9fa; 
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 200px;
+    }
+    .main-content {
+        margin-left: 210px;
+    }
+}
+
+@media (max-width: 480px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+    .main-content {
+        margin-left: 0;
+    }
+}
