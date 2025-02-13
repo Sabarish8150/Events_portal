@@ -16,14 +16,14 @@
 
 .sidebar img {
     display: block;
-    margin: 0 auto;
+    margin: 0;
     border-radius: 50%;
     width: 80px;
 }
 
 .sidebar h2 {
     text-align: center;
-    font-size: 20px;
+    font-size: px;
     margin-top: 10px;
 }
 
@@ -134,20 +134,20 @@ th {
 /* Grid container for the dashboard */
 .dashboard-grid {
     display: grid;
-    grid-template-columns: 3fr 1fr; /* First section takes more space */
+    grid-template-columns: 34vh 10vh; /* First section takes more space */
     /* gap: 20px; */
     height: 100%;
     padding: 10px;
 }
 .horizontal-scroll h2{
-    text-align: left;
+    text-align: left;   
 }
 /* Horizontal scrolling section */
 .horizontal-scroll {
     overflow-x: auto;
     white-space: nowrap;
     padding: 10px;
-    background: #f8f9fa;
+    background: #ffffff;
     border-radius: 10px;
     /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */
 }
