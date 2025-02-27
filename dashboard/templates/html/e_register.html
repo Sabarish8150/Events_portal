@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Events</title>
+    <link rel="stylesheet" href="e_register.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="logo">
+                <img src="https://via.placeholder.com/150x50?text=LOGO" alt="Logo">
+                <h2>Events Portal</h2>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                <li><a href="ira.html"><i class="fas fa-graduation-cap"></i> IRA</a></li>
+                <li class="active"><a href="#"><i class="fas fa-calendar-plus"></i> All Events</a></li>
+            </ul>
+            <div class="logout">
+                <a href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="header">
+                <h1>All Events</h1>
+                <div class="user-info">
+                    <span>Welcome, Student</span>
+                    <img src="https://via.placeholder.com/40" alt="User">
+                </div>
+            </div>
+
+            <!-- Events Table -->
+            <div class="section">
+                <div class="events-table-container">
+                    <table class="events-table">
+                        <thead>
+                            <tr>
+                                <th>Event Name</th>
+                                <th>Event Code</th>
+                                <th>Date</th>
+                                <th>Level</th>
+                                <th>Type</th>
+                                <th>Seats Left</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Web Development Workshop</td>
+                                <td>WD001</td>
+                                <td>15 Aug 2025</td>
+                                <td>Intermediate</td>
+                                <td>Workshop</td>
+                                <td>12</td>
+                                <td><button class="register-btn small" onclick="openRegisterModal('WD001')">Register</button></td>
+                            </tr>
+                            <tr>
+                                <td>AI Conference</td>
+                                <td>AI002</td>
+                                <td>20 Aug 2025</td>
+                                <td>Advanced</td>
+                                <td>Conference</td>
+                                <td>5</td>
+                                <td><button class="register-btn small" onclick="openRegisterModal('AI002')">Register</button></td>
+                            </tr>
+                            <tr>
+                                <td>Python Basics</td>
+                                <td>PY003</td>
+                                <td>25 Aug 2025</td>
+                                <td>Beginner</td>
+                                <td>Workshop</td>
+                                <td>20</td>
+                                <td><button class="register-btn small" onclick="openRegisterModal('PY003')">Register</button></td>
+                            </tr>
+                            <tr>
+                                <td>Data Science Seminar</td>
+                                <td>DS004</td>
+                                <td>30 Aug 2025</td>
+                                <td>Intermediate</td>
+                                <td>Seminar</td>
+                                <td>8</td>
+                                <td><button class="register-btn small" onclick="openRegisterModal('DS004')">Register</button></td>
+                            </tr>
+                            <tr>
+                                <td>Cybersecurity Workshop</td>
+                                <td>CS005</td>
+                                <td>5 Sep 2025</td>
+                                <td>Advanced</td>
+                                <td>Workshop</td>
+                                <td>15</td>
+                                <td><button class="register-btn small" onclick="openRegisterModal('CS005')">Register</button></td>
+                            </tr>
+                            <tr>
+                                <td>Mobile App Development</td>
+                                <td>MA006</td>
+                                <td>10 Sep 2025</td>
+                                <td>Intermediate</td>
+                                <td>Workshop</td>
+                                <td>10</td>
+                                <td><button class="register-btn small" onclick="openRegisterModal('MA006')">Register</button></td>
+                            </tr>
+                            <tr>
+                                <td>Research Paper Writing</td>
+                                <td>RP007</td>
+                                <td>15 Sep 2025</td>
+                                <td>Beginner</td>
+                                <td>Workshop</td>
+                                <td>25</td>
+                                <td><button class="register-btn small" onclick="openRegisterModal('RP007')">Register</button></td>
+                            </tr>
+                            <tr>
+                                <td>Blockchain Fundamentals</td>
+                                <td>BF008</td>
+                                <td>20 Sep 2025</td>
+                                <td>Intermediate</td>
+                                <td>Seminar</td>
+                                <td>18</td>
+                                <td><button class="register-btn small" onclick="openRegisterModal('BF008')">Register</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Floating Register Button -->
+        <button class="floating-register-btn" onclick="openRegisterModal()">
+            <i class="fas fa-calendar-plus"></i> Register Event
+        </button>
+
+        <!-- Register Modal -->
+        <div id="registerModal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn" onclick="closeRegisterModal()">&times;</span>
+                <h2>Register for Event</h2>
+                <form id="register-form">
+                    <div class="form-group">
+                        <label for="event-code">Event Code</label>
+                        <input type="text" id="event-code" name="event-code" placeholder="Enter Event Code" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="whatsapp-number">WhatsApp Number</label>
+                        <input type="text" id="whatsapp-number" name="whatsapp-number" placeholder="Enter WhatsApp Number" required>
+                    </div>
+                    <button type="submit" class="register-btn">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="e_register.js"></script>
+</body>
+</html>

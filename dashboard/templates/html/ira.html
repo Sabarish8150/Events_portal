@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IRA - Internal Review Assessment</title>
+    <link rel="stylesheet" href="ira.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="logo">
+                <img src="https://via.placeholder.com/150x50?text=LOGO" alt="Logo">
+                <h2>Events Portal</h2>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                <li class="active"><a href="#"><i class="fas fa-graduation-cap"></i> IRA</a></li>
+                <li><a href="e_register.html"><i class="fas fa-calendar-plus"></i> Event Register</a></li>
+            </ul>
+            <div class="logout">
+                <a href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="header">
+                <h1>Internal Review Assessment</h1>
+                <div class="user-info">
+                    <span>Welcome, John Doe</span>
+                    <img src="https://via.placeholder.com/40" alt="User">
+                </div>
+            </div>
+
+            <!-- Pending Assessment Card -->
+            <div class="section">
+                <h2>Pending Assessment</h2>
+                <div class="assessment-card">
+                    <h3>Web Development Workshop</h3>
+                    <div class="assessment-details">
+                        <p><strong>Event Code:</strong> WD001</p>
+                        <p><strong>Date:</strong> 15 Aug 2025</p>
+                        <p><strong>Level:</strong> Intermediate</p>
+                    </div>
+                    <button class="start-assessment-btn" onclick="startAssessment('WD001')">Start Assessment</button>
+                </div>
+            </div>
+
+            <!-- Completed Assessments Table -->
+            <div class="section">
+                <h2>Completed Assessments</h2>
+                <div class="completed-assessments">
+                    <table class="assessments-table">
+                        <thead>
+                            <tr>
+                                <th>Event Name</th>
+                                <th>Date Completed</th>
+                                <th>Score</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>AI Conference</td>
+                                <td>10 Aug 2025</td>
+                                <td>85%</td>
+                                <td>Completed</td>
+                                <td><button class="view-details-btn">View Details</button></td>
+                            </tr>
+                            <tr>
+                                <td>Python Basics</td>
+                                <td>5 Aug 2025</td>
+                                <td>78%</td>
+                                <td>Completed</td>
+                                <td><button class="view-details-btn">View Details</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="ira.js"></script>
+</body>
+</html>
