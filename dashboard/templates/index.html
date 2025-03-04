@@ -1,10 +1,11 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Events Portal</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
@@ -17,11 +18,11 @@
             </div>
             <ul class="nav-links">
                 <li class="active"><a href="#"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
-                <li><a href="ira.html"><i class="fas fa-graduation-cap"></i> IRA</a></li>
-                <li><a href="e_register.html"><i class="fas fa-calendar-plus"></i> Event Register</a></li>
+                <li><a href="{% url 'ira' %}"><i class="fas fa-graduation-cap"></i> IRA</a></li>
+                <li><a href="{% url 'e_register' %}"><i class="fas fa-calendar-plus"></i> Event Register</a></li>
             </ul>
             <div class="logout">
-                <a href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                <a href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i> Logout</a>
             </div>
         </div>
 
@@ -119,78 +120,17 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                {% for event in events %}
                                 <tr>
-                                    <td>Web Development Workshop</td>
-                                    <td>WD001</td>
-                                    <td>15 Aug 2025</td>
-                                    <td>Intermediate</td>
-                                    <td>Workshop</td>
-                                    <td>12</td>
+                                    <td>{{ event.name }}</td>
+                                    <td>{{ event.event_code }}</td>
+                                    <td>{{ event.date }}</td>
+                                    <td>{{ event.level }}</td>
+                                    <td>{{ event.event_type }}</td>
+                                    <td>{{ event.seats_left }}</td>
                                     <td><button class="register-btn small">Register</button></td>
                                 </tr>
-                                <tr>
-                                    <td>AI Conference</td>
-                                    <td>AI002</td>
-                                    <td>20 Aug 2025</td>
-                                    <td>Advanced</td>
-                                    <td>Conference</td>
-                                    <td>5</td>
-                                    <td><button class="register-btn small">Register</button></td>
-                                </tr>
-                                <tr>
-                                    <td>Python Basics</td>
-                                    <td>PY003</td>
-                                    <td>25 Aug 2025</td>
-                                    <td>Beginner</td>
-                                    <td>Workshop</td>
-                                    <td>20</td>
-                                    <td><button class="register-btn small">Register</button></td>
-                                </tr>
-                                <tr>
-                                    <td>Data Science Seminar</td>
-                                    <td>DS004</td>
-                                    <td>30 Aug 2025</td>
-                                    <td>Intermediate</td>
-                                    <td>Seminar</td>
-                                    <td>8</td>
-                                    <td><button class="register-btn small">Register</button></td>
-                                </tr>
-                                <tr>
-                                    <td>Cybersecurity Workshop</td>
-                                    <td>CS005</td>
-                                    <td>5 Sep 2025</td>
-                                    <td>Advanced</td>
-                                    <td>Workshop</td>
-                                    <td>15</td>
-                                    <td><button class="register-btn small">Register</button></td>
-                                </tr>
-                                <tr>
-                                    <td>Mobile App Development</td>
-                                    <td>MA006</td>
-                                    <td>10 Sep 2025</td>
-                                    <td>Intermediate</td>
-                                    <td>Workshop</td>
-                                    <td>10</td>
-                                    <td><button class="register-btn small">Register</button></td>
-                                </tr>
-                                <tr>
-                                    <td>Research Paper Writing</td>
-                                    <td>RP007</td>
-                                    <td>15 Sep 2025</td>
-                                    <td>Beginner</td>
-                                    <td>Workshop</td>
-                                    <td>25</td>
-                                    <td><button class="register-btn small">Register</button></td>
-                                </tr>
-                                <tr>
-                                    <td>Blockchain Fundamentals</td>
-                                    <td>BF008</td>
-                                    <td>20 Sep 2025</td>
-                                    <td>Intermediate</td>
-                                    <td>Seminar</td>
-                                    <td>18</td>
-                                    <td><button class="register-btn small">Register</button></td>
-                                </tr>
+                                {% endfor %}
                             </tbody>
                         </table>
                     </div>
@@ -199,6 +139,6 @@
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="{% static 'js/script.js' %}"></script>
 </body>
 </html>

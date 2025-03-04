@@ -21,6 +21,6 @@ from . import views
 urlpatterns = [
     path('', views.dashboard,name='dashboard'),
     path('ira/',views.ira,name='ira'),
-    path('events_registered/',views.events_registered,name='events_registered'),
+    path('e_register/',views.e_register,name='e_register'),
     path('logout/',views.logout,name='logout'),
 ]
