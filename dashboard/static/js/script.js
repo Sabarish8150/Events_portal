@@ -49,3 +49,12 @@ document.querySelectorAll('.event-card, .target-card').forEach(card => {
         card.classList.remove('touched');
     });
 });
+
+function openRegisterModal(eventCode = '') {
+    const modal = document.getElementById('registerModal');
+    const eventCodeInput = document.getElementById('event-code');
+    if (eventCode) {
+        eventCodeInput.value = eventCode;
+    }
+    modal.style.display = 'flex';
+}

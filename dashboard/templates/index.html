@@ -13,7 +13,7 @@
         <!-- Sidebar -->
         <div class="sidebar">
             <div class="logo">
-                <img src="https://via.placeholder.com/150x50?text=LOGO" alt="Logo">
+                <img src="{% static 'logo.png' %}" alt="Logo" style="height: 60px;">
                 <h2>Events Portal</h2>
             </div>
             <ul class="nav-links">
@@ -42,38 +42,23 @@
                 <div class="section">
                     <h2>Ongoing Events</h2>
                     <div class="ongoing-events">
-                        <div class="event-card">
-                            <h3>Web Development Workshop</h3>
-                            <div class="event-details">
-                                <p><strong>Level:</strong> Intermediate</p>
-                                <p><strong>Date:</strong> 15 Aug 2025</p>
-                                <p><strong>Faculty:</strong> Dr. John Doe</p>
-                                <p><strong>Seats Left:</strong> <span class="seats">12</span></p>
-                            </div>
-                            <button class="register-btn">Register</button>
+                        {% for event in events|slice:":3" %}
+                    <div class="event-card">
+                        <h3>{{ event.title }}</h3>
+                        <div class="event-details">
+                            <p><strong>Level:</strong> {{ event.level }}</p>
+                            <p><strong>Date:</strong> {{ event.date }}</p>
+                            <p><strong>Faculty:</strong> {{ event.faculty }}</p>
+                            <p><strong>Seats Left:</strong> <span class="seats">{{ event.seats_left }}</span></p>
                         </div>
-                        <div class="event-card">
-                            <h3>AI Conference</h3>
-                            <div class="event-details">
-                                <p><strong>Level:</strong> Advanced</p>
-                                <p><strong>Date:</strong> 20 Aug 2025</p>
-                                <p><strong>Faculty:</strong> Dr. Jane Smith</p>
-                                <p><strong>Seats Left:</strong> <span class="seats">5</span></p>
-                            </div>
-                            <button class="register-btn">Register</button>
-                        </div>
-                        <div class="event-card">
-                            <h3>Python Basics</h3>
-                            <div class="event-details">
-                                <p><strong>Level:</strong> Beginner</p>
-                                <p><strong>Date:</strong> 25 Aug 2025</p>
-                                <p><strong>Faculty:</strong> Prof. Mike Johnson</p>
-                                <p><strong>Seats Left:</strong> <span class="seats">20</span></p>
-                            </div>
-                            <button class="register-btn">Register</button>
-                        </div>
+                        <button class="register-btn" onclick="openRegisterModal('{{ event.code }}')">Register</button>
+                    </div>
+                    {% empty %}
+                    <p>No events available.</p>
+                    {% endfor %}
                     </div>
                 </div>
+                
 
                 <!-- Yearly Target Section -->
                 <div class="section yearly-target">

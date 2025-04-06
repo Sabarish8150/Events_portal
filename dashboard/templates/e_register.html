@@ -22,7 +22,7 @@
                 <li class="active"><a href="#"><i class="fas fa-calendar-plus"></i> All Events</a></li>
             </ul>
             <div class="logout">
-                <a href="{% url 'e_register' %}"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                <a href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i> Logout</a>
             </div>
         </div>
 
@@ -52,78 +52,23 @@
                             </tr>
                         </thead>
                         <tbody>
+                            {% for event in events %}
                             <tr>
-                                <td>Web Development Workshop</td>
-                                <td>WD001</td>
-                                <td>15 Aug 2025</td>
-                                <td>Intermediate</td>
-                                <td>Workshop</td>
-                                <td>12</td>
-                                <td><button class="register-btn small" onclick="openRegisterModal('WD001')">Register</button></td>
+                                <td>{{ event.name }}</td>
+                                <td>{{ event.event_code }}</td>
+                                <td>{{ event.date }}</td>
+                                <td>{{ event.level }}</td>
+                                <td>{{ event.event_type }}</td>
+                                <td>{{ event.seats_left }}</td>
+                                <td>
+                                    <button class="register-btn small" onclick="openRegisterModal('{{ event.code }}')">Register</button>
+                                </td>
                             </tr>
+                            {% empty %}
                             <tr>
-                                <td>AI Conference</td>
-                                <td>AI002</td>
-                                <td>20 Aug 2025</td>
-                                <td>Advanced</td>
-                                <td>Conference</td>
-                                <td>5</td>
-                                <td><button class="register-btn small" onclick="openRegisterModal('AI002')">Register</button></td>
+                                <td colspan="7">No events available</td>
                             </tr>
-                            <tr>
-                                <td>Python Basics</td>
-                                <td>PY003</td>
-                                <td>25 Aug 2025</td>
-                                <td>Beginner</td>
-                                <td>Workshop</td>
-                                <td>20</td>
-                                <td><button class="register-btn small" onclick="openRegisterModal('PY003')">Register</button></td>
-                            </tr>
-                            <tr>
-                                <td>Data Science Seminar</td>
-                                <td>DS004</td>
-                                <td>30 Aug 2025</td>
-                                <td>Intermediate</td>
-                                <td>Seminar</td>
-                                <td>8</td>
-                                <td><button class="register-btn small" onclick="openRegisterModal('DS004')">Register</button></td>
-                            </tr>
-                            <tr>
-                                <td>Cybersecurity Workshop</td>
-                                <td>CS005</td>
-                                <td>5 Sep 2025</td>
-                                <td>Advanced</td>
-                                <td>Workshop</td>
-                                <td>15</td>
-                                <td><button class="register-btn small" onclick="openRegisterModal('CS005')">Register</button></td>
-                            </tr>
-                            <tr>
-                                <td>Mobile App Development</td>
-                                <td>MA006</td>
-                                <td>10 Sep 2025</td>
-                                <td>Intermediate</td>
-                                <td>Workshop</td>
-                                <td>10</td>
-                                <td><button class="register-btn small" onclick="openRegisterModal('MA006')">Register</button></td>
-                            </tr>
-                            <tr>
-                                <td>Research Paper Writing</td>
-                                <td>RP007</td>
-                                <td>15 Sep 2025</td>
-                                <td>Beginner</td>
-                                <td>Workshop</td>
-                                <td>25</td>
-                                <td><button class="register-btn small" onclick="openRegisterModal('RP007')">Register</button></td>
-                            </tr>
-                            <tr>
-                                <td>Blockchain Fundamentals</td>
-                                <td>BF008</td>
-                                <td>20 Sep 2025</td>
-                                <td>Intermediate</td>
-                                <td>Seminar</td>
-                                <td>18</td>
-                                <td><button class="register-btn small" onclick="openRegisterModal('BF008')">Register</button></td>
-                            </tr>
+                            {% endfor %}
                         </tbody>
                     </table>
                 </div>
