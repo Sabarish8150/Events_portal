@@ -21,7 +21,7 @@ A web-based portal built with **Django** for managing and tracking events, allow
 
 ## 📁 Project Structure
 
-```
+
 events_management_system/
 │
 ├── events_management_system/  # Main project settings
